@@ -22,7 +22,7 @@ app.get("/seed_db", async (req, res) => {
   try {
     await sequelize.sync({ force: true });
 
-    await author.bulkCreate(authorData);
+    await books.bulkCreate(booksData);
 
     res.status(200).json({ message: "Database Seeding successful" });
   } catch (error) {
@@ -70,6 +70,8 @@ app.post("/authors/update/:id", async (req, res) => {
     return res.status(500).json({ error: error.message });
   }
 });
+
+
 
 app.listen(3000, () => {
   console.log("server is running in port 3000");
