@@ -4,7 +4,6 @@ const { sequelize } = require("./lib/index");
 const { agent } = require("./models/agent.model");
 const { customers } = require("./models/customers.model");
 const { tickets } = require("./models/tickets.model");
-const { error } = require("console");
 
 app.use(express.json());
 
