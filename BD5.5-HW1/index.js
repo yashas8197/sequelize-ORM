@@ -131,7 +131,7 @@ async function getAllLikedBooks(userId) {
     where: { id: { [Op.in]: bookRecords } },
   });
 
-  return likedBook;
+  return { message: "all liked books", likedBook };
 }
 
 app.get("/users/:id/liked", async (req, res) => {
@@ -139,7 +139,7 @@ app.get("/users/:id/liked", async (req, res) => {
     const userId = req.params.id;
     const response = await getAllLikedBooks(userId);
 
-    if (response.likedBook.length === 0) {
+    if (!response.message) {
       return res.status(404).json({ message: "No liked Book found" });
     }
 

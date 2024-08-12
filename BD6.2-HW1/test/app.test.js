@@ -1,4 +1,3 @@
-const { mock } = require("node:test");
 const { app, getEmployees, getEmployeeById, addEmployee } = require("../index");
 
 // to create mock function we need a mock server.
