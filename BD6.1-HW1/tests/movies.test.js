@@ -12,7 +12,7 @@ describe("movies Function", () => {
     ]);
   });
 
-  it("should return a book by id", () => {
+  it("should return a movie by id", () => {
     let movie = getMovieById(1);
     expect(movie).toEqual({
       id: 1,
